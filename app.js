@@ -4,7 +4,7 @@ const path = require('path');
 
 
 const app = express();
-const puerto = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use('/', express.static(__dirname + '/public'));
@@ -34,6 +34,6 @@ app.get("/register",(req,res)=>{
     res.sendFile(ruta);
 })
 
-app.listen(puerto, () => {
-    console.log('Aplicación escuchando en puerto 3000');
+app.listen(PORT, () => {
+  console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
